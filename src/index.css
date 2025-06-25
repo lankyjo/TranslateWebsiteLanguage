@@ -1,0 +1,118 @@
+.app {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fafafa;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+  color: #333;
+  position: relative;
+}
+.translate-btn{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+button{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+}
+body{
+  top: 0px !important;
+}
+.content {
+  margin-bottom: 30px;
+}
+
+.content h1,
+.content h2 {
+  font-weight: 600;
+  color: #222;
+}
+
+.content h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  margin: 24px 0 12px;
+}
+
+.content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.content code {
+  font-size: 0.95rem;
+  font-weight: bold;
+  background-color: #f3f3f3;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+#google_translate_element {
+  margin: 30px 0;
+  text-align: center;
+}
+svg .VIpgJd-ZVi9od-aZ2wEe{
+  display: none !important  ;
+  width: 0px !important;
+}
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf, .VIpgJd-ZVi9od-aZ2wEe-OiiCO{
+  display: none !important ;
+}
+iframe[id=":2.container"]{
+  display: none !important;
+  position: absolute !important;
+}
+iframe[id="VIpgJd-ZVi9od-xl07Ob-OEVmcd skiptranslate"]{
+  display: none !important;
+  position: absolute !important;
+}
+/* ==========================
+  🌐 STYLE THE GOOGLE TRANSLATOR WIDGET AS A BUTTON
+========================== */
+.skiptranslate.goog-te-gadget {
+  display: inline-block;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #007BFF;
+  color: #fff !important;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.skiptranslate.goog-te-gadget:hover {
+  background-color: #0056b3;
+}
+
+.skiptranslate.goog-te-gadget a {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.skiptranslate.goog-te-gadget .goog-te-gadget-simple {
+  border: none !important;
+  background: none !important;
+}
+
+.skiptranslate.goog-te-gadget span {
+  color: #fff !important;
+}
+
+.skiptranslate.goog-te-gadget img {
+  display: none !important;
+}

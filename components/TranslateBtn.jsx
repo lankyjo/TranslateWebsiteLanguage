@@ -1,48 +1,38 @@
 import React, { useEffect } from 'react'
 
 const TranslateBtn = () => {
-      useEffect(() => {
-    window.googleTranslateElementInit = () => {
-      const translateElement = document.getElementById(
-        "google_translate_element"
-      );
-      if (translateElement) {
-        translateElement.innerHTML = "";
-        new window.google.translate.TranslateElement(
-          {
-            pageLanguage: "en",
-            includedLanguages: "en,es,fr,de,zh-CN,ja",
-            layout:
-              window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-          },
-          "google_translate_element"
-        );
-      }
-    };
-
-    if (!document.querySelector("#google-translate-script")) {
-      const script = document.createElement("script");
-      script.id = "google-translate-script";
-      script.src =
-        "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-      script.async = true;
-      document.body.appendChild(script);
+  useEffect(() => {
+    if (window.gtranslateScriptLoaded) {
+      return;
     }
 
-    return () => {
-      const script = document.querySelector("#google-translate-script");
-      if (script) {
-        script.remove();
-      }
-      delete window.googleTranslateElementInit;
-
-      const widgets = document.querySelectorAll(".skiptranslate");
-      widgets.forEach((widget) => widget.remove());
+    window.gtranslateSettings = {
+      default_language: 'en',
+      detect_browser_language: true,
+      wrapper_selector: '.gtranslate_wrapper',
+      flag_size: 24,
     };
-  }, []);
-  return (
-    <button id="google_translate_element"></button>
-  )
-}
+
+    const script = document.createElement('script');
+    script.src = 'https://cdn.gtranslate.net/widgets/latest/popup.js';
+    script.defer = true;
+
+    // Set a flag on the window when the script has finished loading
+    // This is the key to preventing the script from being added multiple times
+    script.onload = () => {
+      window.gtranslateScriptLoaded = true;
+    };
+
+    document.body.appendChild(script);
+    
+  }, []); 
+
+  // This div is the placeholder where the GTranslate widget will be rendered.
+  return <div className="gtranslate_wrapper"></div>;
+};
+  // return (
+  //   <button id="google_translate_element"></button>
+  // )
+// }
 
 export default TranslateBtn
